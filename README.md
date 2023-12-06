@@ -10,7 +10,7 @@ A React Project that makes use of the following libraries:
 - react-router-dom
 
 **Demo:**
-https://65707cdc8f914c009b3ee781--superb-pie-b40129.netlify.app/
+https://superb-pie-b40129.netlify.app/
 
 **Installation**
 
