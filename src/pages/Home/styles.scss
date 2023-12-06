@@ -1,0 +1,32 @@
+@import "../../partials/mixins.scss";
+
+.home {
+    margin-top: rem(70);
+    display: flex;
+    margin-bottom: 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+
+    @include lg {
+        margin-top: rem(122);
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: rem(122);
+
+        @include md-max {
+            font-size: rem(45);
+        }
+    }
+    
+    h2 {
+        font-weight: 100;
+        font-size: rem(32);
+
+        @include md-max {
+            margin-top: rem(20);
+            font-size: rem(25);
+        }
+    }
+}

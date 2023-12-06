@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
+import Auth0ProviderWithRedirectCallback from './components/Auth0ProviderWithRedirectCallback';
+import './partials/theme.scss'
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Auth0ProviderWithRedirectCallback
+        domain={process.env.REACT_APP_DOMAIN ?? ''}
+        clientId={process.env.REACT_APP_CLIENT_ID ?? ''}
+        authorizationParams={{
+          // audience: process.env.REACT_APP_AUDIENCE,
+          // scope: "profile email read:users",
+          redirect_uri: window.location.origin,
+        }}
+      >
+        <App />
+      </Auth0ProviderWithRedirectCallback>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
