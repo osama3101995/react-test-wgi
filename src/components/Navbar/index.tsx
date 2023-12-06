@@ -76,6 +76,25 @@ export function Nav() {
             </Button>
           )}
         </>}
+        <div className="desktop-only">
+        {isAuthenticated ? (
+            <div>
+              <Button
+                id="logout"
+                type={"outline"}
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Logout
+              </Button>
+            </div>
+          ) : (
+            <Button id="login" onClick={() => loginWithRedirect()}>
+              Login
+            </Button>
+          )}
+        </div>
       </div>
     </nav>
   );
